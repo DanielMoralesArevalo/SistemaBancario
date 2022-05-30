@@ -55,12 +55,12 @@
     <a class="navbar-brand" href="../FrontEnd/FiltrarCuentaHabientes.front.php">
         <button type="button" class="btn btn-primary">CuentaHabientes</button>
     </a>
-    <!-- <a class="navbar-brand">
+    <a class="navbar-brand">
         <form  method="POST">   
-            <input type="hidden" name="anticsrf" value="">    
+            <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">    
             <button type="submit" class="btn btn-primary" name="GenerateReports">Generar Reportes</button>
         </form>
-    </a> -->
+    </a>
     <a class="navbar-brand">
         <form method="POST">
             <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">    
