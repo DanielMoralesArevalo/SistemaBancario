@@ -1,16 +1,38 @@
 <?php ob_start();?>
-<?php
-include('./createPDF.php');
-include('../BackEnd/mainPage.back.php');
-regularNavegacion(2);
-if(isset($_POST['CloseSession'])){
-    closeSession();
-}
-if(isset($_POST['GenerateReports'])){
-    GenerateReports($conn);
-}
-?>
+ <?php
+    include('./createPDF.php');
+    include('../BackEnd/mainPage.back.php');
+    regularNavegacion(2);
 
+    if(isset($_POST['GenerateReports'])){
+        GenerateReports($conn);
+    }
+
+    if(isset($_POST['CloseSession'])){
+        closeSession();
+    }
+
+    $documento = $_SESSION["documento"];
+
+    $consulta= "EXEC [dbo].[PA_BANCO]
+        @DOCUMENTO = N'$documento'";
+    $resultado=sqlsrv_query($conn, $consulta);
+    $banco;
+    $nit;
+    $ciudad;
+    $sede; 
+    $telefono; 
+    $gerente;
+    while($fila = sqlsrv_fetch_array($resultado)){
+        $banco = $fila['BANCO'];
+        $nit = $fila['NIT'];
+        $ciudad = $fila['CIUDAD'];
+        $sede = $fila['SEDE']; 
+        $telefono = $fila['TELEFONO']; 
+        $gerente = $fila['GERENTE'];
+        $_SESSION["id_sucursal"] = $fila['SUCURSAL'];
+    }
+?>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -20,6 +42,7 @@ if(isset($_POST['GenerateReports'])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+    <nav class="navbar navbar-light bg-light" style="width:fit-content;">
     <nav class="navbar navbar-light bg-light" style="width:fit-content;">
     <a class="navbar-brand" href="../FrontEnd/mainPageBanquero.front.php">
         <button type="button" class="btn btn-primary">Página Principal</button>
@@ -31,26 +54,30 @@ if(isset($_POST['GenerateReports'])){
         <button type="button" class="btn btn-primary">CuentaHabientes</button>
     </a>
     <a class="navbar-brand">
-        <form method="POST">   
+        <form  method="POST">   
+            <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">    
             <button type="submit" class="btn btn-primary" name="GenerateReports">Generar Reportes</button>
         </form>
     </a>
     <a class="navbar-brand">
-        <form method="POST">   
+        <form method="POST">
+            <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">    
             <button type="submit" class="btn btn-link" name="CloseSession">Cerrar Sesión</button>
         </form>
     </a>
-    
     </nav>
-    <div align="center">
-        <H1>BIENVENIDOS AL BANCO UDEC</H1>
-        <!-- <img src="https://www.valoraanalitik.com/wp-content/uploads/2018/03/BancodeBogota-696x461.jpg" -->
-            <!-- width="600" height="400" class="d-inline-block align-top" alt=""> -->
-        <?php
-        echo "XDXDXDXD";
-        //seeData($conn); 
-        ?>
-        <?php ob_end_flush(); ?>
+    <div align="center" style="width:100%">
+        <div style="margin-left:20px" align = "left">
+        <H1>BIENVENIDO:</H1>
+            <b>Banco:</b><?php echo $banco ?><br>
+            <b>Nit:</b><?php echo $nit ?><br>
+            <b>Ciudad:</b><?php echo $ciudad ?><br>
+            <b>Sede:</b><?php echo $sede ?><br>
+            <b>Telefono:</b><?php echo $telefono ?><br>
+            <b>Gerente:</b><?php echo $gerente ?><?php ob_end_flush(); ?><br>
+        </div>
     </div>
 </body>
+
 </html>
+
