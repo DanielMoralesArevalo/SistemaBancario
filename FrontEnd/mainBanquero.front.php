@@ -3,7 +3,7 @@
     session_start();
     include('../BD_&_Security/tools.php');
     include('../conexion.php');
-    // include('./createPDF.php');
+    include('./createPDF.php');
     regularNavegacion(2);
     GenerarAntiCSRF();
 
