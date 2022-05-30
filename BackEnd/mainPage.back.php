@@ -5,7 +5,7 @@ include('../BD_&_Security/tools.php');
 include('../conexion.php');
 MostrarErrores();
 // IniciarSesionSegura();
-// GenerarAntiCSRF();
+GenerarAntiCSRF();
 
 function seeData($conn){
   $documento = $_SESSION["documento"];
