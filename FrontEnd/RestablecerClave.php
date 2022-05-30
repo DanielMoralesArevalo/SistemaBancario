@@ -56,7 +56,7 @@ function CambiarClave($conn,$claveGenerada, $claveNueva,$documento){
       if ($fila["ESTADO"] == "TRUE") {
          echo'<script type="text/javascript">
                alert("CONTRASEÑA ACTUALIZADA!!!!!!!");
-               window.location="http://localhost/Linea_Prof_3/Banco_Project/FrontEnd/index.front.php"
+               window.location="http://localhost/Linea_Prof_3/SistemaBancario/FrontEnd/index.front.php"
                </script>';
       }
       else {

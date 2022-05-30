@@ -1,7 +1,6 @@
 <?php ob_start();?>
 <?php
 include('../FrontEnd/SendEmail.php');
-require_once '../vendor/autoload.php';
 include('../conexion.php');
 
 //Primer nivel: CUENTAHABIENTES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

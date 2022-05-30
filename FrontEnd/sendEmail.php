@@ -41,6 +41,7 @@ function sendEmail($mpdf,$email){
         $mail->send();
         echo'<script type="text/javascript">
                 alert("Enviado Correctamente");
+                window.location="http://localhost/Linea_Prof_3/SistemaBancario/FrontEnd/index.front.php"
             </script>';
         
     } catch (Exception $e) {

@@ -44,7 +44,7 @@ function CorreoRestablecimiento($email,$CLAVE_RANDOM){
             <body>
             <p>Ya casi puedes restablecer tu clave</p>
         <br>
-        <a href="http://localhost/Linea_Prof_3/Banco_Project/FrontEnd/RestablecerClave.php">Restablecer Clave</a><br>
+        <a href="http://localhost/Linea_Prof_3/SistemaBancario/FrontEnd/RestablecerClave.php">Restablecer Clave</a><br>
         <b>Clave Generada:</b>'.$CLAVE_RANDOM.'
         <br>
         </body>
@@ -53,7 +53,7 @@ function CorreoRestablecimiento($email,$CLAVE_RANDOM){
         $mail->send();
         echo'<script type="text/javascript">
                 alert("Enviado Correctamente");
-                window.location="http://localhost/Linea_Prof_3/Banco_Project/FrontEnd/index.front.php"
+                window.location="http://localhost/Linea_Prof_3/SistemaBancario/FrontEnd/index.front.php"
                 </script>';
         
     } catch (Exception $e) {
