@@ -1,10 +1,11 @@
 <?php ob_start();?>
 <?php 
+session_start();
 include('../BD_&_Security/tools.php');
 include('../conexion.php');
 MostrarErrores();
-IniciarSesionSegura();
-GenerarAntiCSRF();
+// IniciarSesionSegura();
+// GenerarAntiCSRF();
 
 function seeData($conn){
   $documento = $_SESSION["documento"];

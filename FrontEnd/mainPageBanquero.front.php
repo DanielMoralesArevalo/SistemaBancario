@@ -2,8 +2,6 @@
 <?php
 include('./createPDF.php');
 include('../BackEnd/mainPage.back.php');
-MostrarErrores();
-
 regularNavegacion(2);
 if(isset($_POST['CloseSession'])){
     closeSession();
@@ -33,14 +31,12 @@ if(isset($_POST['GenerateReports'])){
         <button type="button" class="btn btn-primary">CuentaHabientes</button>
     </a>
     <a class="navbar-brand">
-        <form method="POST">  
-            <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">  
+        <form method="POST">   
             <button type="submit" class="btn btn-primary" name="GenerateReports">Generar Reportes</button>
         </form>
     </a>
     <a class="navbar-brand">
         <form method="POST">   
-            <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">  
             <button type="submit" class="btn btn-link" name="CloseSession">Cerrar Sesión</button>
         </form>
     </a>
