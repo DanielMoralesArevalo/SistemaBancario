@@ -46,7 +46,6 @@
 </head>
 <body>
     <nav class="navbar navbar-light bg-light" style="width:fit-content;">
-    <nav class="navbar navbar-light bg-light" style="width:fit-content;">
     <a class="navbar-brand" href="../FrontEnd/mainPageBanquero.front.php">
         <button type="button" class="btn btn-primary">Página Principal</button>
     </a>
