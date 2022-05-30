@@ -52,7 +52,7 @@ if(isset($_POST['GenerateReports'])){
             <!-- width="600" height="400" class="d-inline-block align-top" alt=""> -->
         <?php
         echo "XDXDXDXD";
-        seeData($conn); 
+        //seeData($conn); 
         ?>
         <?php ob_end_flush(); ?>
     </div>
