@@ -1,8 +1,11 @@
 <?php ob_start();?>
  <?php
+    session_start();
+    include('../BD_&_Security/tools.php');
+    include('../conexion.php');
     include('./createPDF.php');
-    include('../BackEnd/mainPage.back.php');
     regularNavegacion(2);
+    GenerarAntiCSRF();
 
     if(isset($_POST['GenerateReports'])){
         GenerateReports($conn);
