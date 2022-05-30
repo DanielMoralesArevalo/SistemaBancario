@@ -2,9 +2,9 @@
 <?php
 include('../FrontEnd/SendEmail.php');
 require_once '../vendor/autoload.php';
+include('../conexion.php');
 
 //Primer nivel: CUENTAHABIENTES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-function GenerateReports($conn){
     $stylesheet = file_get_contents('../CSS/style.css');
     $cuentaHabientesQuery= "EXEC [dbo].[FILTRAR_CUENTAHABIENTES]";
     $cuentaHabientesResult=sqlsrv_query($conn, $cuentaHabientesQuery);
@@ -100,7 +100,6 @@ function GenerateReports($conn){
         sendEmail($mpdf,$email);
             // $mpdf->Output();
     }
-}
 ?>
 <?php ob_end_flush(); ?>
 

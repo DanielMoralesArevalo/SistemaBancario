@@ -3,13 +3,8 @@
     session_start();
     include('../BD_&_Security/tools.php');
     include('../conexion.php');
-    include('./createPDF.php');
     regularNavegacion(2);
     GenerarAntiCSRF();
-
-    if(isset($_POST['GenerateReports'])){
-        GenerateReports($conn);
-    }
 
     if(isset($_POST['CloseSession'])){
         closeSession();
@@ -55,11 +50,8 @@
     <a class="navbar-brand" href="../FrontEnd/FiltrarCuentaHabientes.front.php">
         <button type="button" class="btn btn-primary">CuentaHabientes</button>
     </a>
-    <a class="navbar-brand">
-        <form  method="POST">   
-            <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">    
-            <button type="submit" class="btn btn-primary" name="GenerateReports">Generar Reportes</button>
-        </form>
+    <a class="navbar-brand" href="../FrontEnd/createPDF.php">
+        <button type="button" class="btn btn-primary">Generar Reportes</button>
     </a>
     <a class="navbar-brand">
         <form method="POST">
