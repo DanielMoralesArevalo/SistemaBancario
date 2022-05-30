@@ -16,7 +16,7 @@ $email = "";
 </head>
 <body>
     <nav class="navbar navbar-light bg-light" style="width:fit-content;">
-    <a class="navbar-brand" href="../FrontEnd/mainPageBanquero.front.php">
+    <a class="navbar-brand" href="../FrontEnd/mainBanquero.front.php">
         <button type="button" class="btn btn-primary">Pagina Principal</button>
     </a>
     <a class="navbar-brand" href="../FrontEnd/CreateAccountHolder.front.php" >

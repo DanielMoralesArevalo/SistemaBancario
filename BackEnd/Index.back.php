@@ -50,7 +50,7 @@ function redireccionarLogin(){
   if(isset($_SESSION["tip_user"])){
     
     if($_SESSION["tip_user"] == 2){
-      header("Location: ../FrontEnd/mainPageBanquero.front.php");
+      header("Location: ../FrontEnd/mainBanquero.front.php");
     }
     else if($_SESSION["tip_user"] == 1){
       header("Location: ../FrontEnd/mainPageCuentaHabiente.front.php");

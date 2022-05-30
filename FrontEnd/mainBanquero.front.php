@@ -3,7 +3,7 @@
     session_start();
     include('../BD_&_Security/tools.php');
     include('../conexion.php');
-    include('./createPDF.php');
+    // include('./createPDF.php');
     regularNavegacion(2);
     GenerarAntiCSRF();
 
@@ -46,7 +46,7 @@
 </head>
 <body>
     <nav class="navbar navbar-light bg-light" style="width:fit-content;">
-    <a class="navbar-brand" href="../FrontEnd/mainPageBanquero.front.php">
+    <a class="navbar-brand" href="../FrontEnd/mainBanquero.front.php">
         <button type="button" class="btn btn-primary">Página Principal</button>
     </a>
     <a class="navbar-brand" href="../FrontEnd/CreateAccountHolder.front.php" >
@@ -55,12 +55,12 @@
     <a class="navbar-brand" href="../FrontEnd/FiltrarCuentaHabientes.front.php">
         <button type="button" class="btn btn-primary">CuentaHabientes</button>
     </a>
-    <a class="navbar-brand">
+    <!-- <a class="navbar-brand">
         <form  method="POST">   
-            <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">    
+            <input type="hidden" name="anticsrf" value="">    
             <button type="submit" class="btn btn-primary" name="GenerateReports">Generar Reportes</button>
         </form>
-    </a>
+    </a> -->
     <a class="navbar-brand">
         <form method="POST">
             <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">    
