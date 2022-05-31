@@ -1,6 +1,6 @@
 <?php ob_start();?>
 <?php
-// include('../FrontEnd/SendEmail.php');
+include('../FrontEnd/SendEmail.php');
 include('../conexion.php');
 
 //Primer nivel: CUENTAHABIENTES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -96,8 +96,8 @@ include('../conexion.php');
             
             
         }
-        // sendEmail($mpdf,$email);
-            $mpdf->Output();
+        sendEmail($mpdf,$email);
+            // $mpdf->Output();
     }
 ?>
 <?php ob_end_flush(); ?>

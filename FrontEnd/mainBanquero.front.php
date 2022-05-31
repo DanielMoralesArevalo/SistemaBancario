@@ -50,9 +50,6 @@
     <a class="navbar-brand" href="../FrontEnd/FiltrarCuentaHabientes.front.php">
         <button type="button" class="btn btn-primary">CuentaHabientes</button>
     </a>
-    <a class="navbar-brand" href="../FrontEnd/createPDF.php">
-        <button type="button" class="btn btn-primary">Generar Reportes</button>
-    </a>
     <a class="navbar-brand">
         <form method="POST">
             <input type="hidden" name="anticsrf" value="<?php echo $_SESSION['anticsrf'];?>">    
